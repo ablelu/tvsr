@@ -1,0 +1,457 @@
+body{ 
+    padding-top: 70px; 
+    position: relative;
+    background-repeat: no-repeat;
+    background-color: #f4f4f4;
+    background-attachment: fixed;
+    background-position: left 40px;
+}
+@media (max-width: 980px) {
+    /* Remove any padding from the body */
+    body {
+        padding-top: 0;
+    }
+}
+
+#hot_films .carousel-control.left{
+    left: -70px;
+}
+#hot_films .carousel-control.right{
+    right: -70px;
+}
+.area{
+    background-color: white;
+    padding: 19px;
+    margin-bottom: 12px;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.pre_xml{
+    line-height: 18px;
+    font-size: 12px;
+}
+
+legend h4{
+    text-transform: none;
+    font-weight: bold;
+}
+.navbar .brand{
+    color: lightBlue;
+}
+
+@media (min-width: 980px) {
+.x-li-nickname{
+    width: 138px;
+    height: 40px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+}
+
+.x-block-title {
+    color: #333; 
+    padding: 1px 0 1px 5px; 
+    margin-bottom: 10px;
+    font-size: .9em;
+    opacity: .75;
+    background-color: #eee;
+    filter: alpha(opacity = 75);
+    zoom: 1;
+    border: 1px solid #ccc;
+}
+
+.x-block-space {
+    height: 15px;
+}
+
+.x-cat .nav li .x-cat-tag{
+    padding: 3px;
+    margin:0;
+    margin-top: 2px;
+}
+
+
+
+.x-cat{
+    padding: 3px 10px 3px 10px;
+    margin: 0;
+    font-size: 13px;
+}
+.x-cat ul{
+    margin: 0;
+    padding: 0;
+}
+.x-cat-label{
+    margin-right: 5px;
+}
+
+.x-top-nav li, .subnav ul li{
+    float: left;
+}
+.subnav .dropdown-menu{
+    width: 450px;
+}
+.subnav .dropdown-menu li{
+    width: 150px;
+}
+
+.nav li .ranking-index {
+    height:30px;
+    background-color:#0aa;
+    opacity: .75;
+    color:#fff;
+    font-size:25px;
+    margin:7px;
+    padding:60px 0 60px 0;
+    text-align: center;
+}
+.nav li .ranking-index:hover {
+    opacity: 1;
+    background-color:#0aa;
+}
+
+.x-movie-entry{
+    margin: 5px;
+    position: relative;
+    width: 120px;
+    height: 160px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.x-movie-entry:hover{
+    border: 1px solid orange;
+}
+
+.x-movie-img{
+}
+
+.x-movie-caption{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    color: white;
+    width: 120px;
+    height: 22px;
+    overflow: hidden;
+    background-color: rgba(5,5,5,.7);
+    text-align: center;
+    font-size: 13px;
+    zoom: 1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#B2000000,endcolorstr=#B2000000);
+}
+.x-movie-tags{
+    top:0;
+    left:0;
+    padding: 0 5px 5px 5px;
+    position: absolute;
+    color: white;
+    height: 22px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgba(5,5,5,.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#B2000000,endcolorstr=#B2000000);
+    zoom: 1;
+}
+
+.x-movie-list{
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 10px 8px 30px 8px;
+}
+.x-movie-list li{
+    float: left;
+}
+
+.x-category-result{
+}
+
+.x-movie-list-more{
+    text-align: center;
+}
+
+.x-movie-list-more button{
+    height: 23px;
+    padding: 0;
+    margin: 0;
+}
+
+.x-movie-list-more button:hover{
+}
+
+@media (min-width: 500px) {
+    .x-movie-detail{
+        width: 420px;
+    }
+}
+.x-movie-detail{
+    background-color: #fff;
+    padding: 10px;
+    max-width: 278px;
+    width: 278px;
+    margin: 5px;
+    overflow-y: hidden;
+    position: relative;
+    box-shadow: 0 0 30px #eee;
+}
+
+.x-usermovie-buttons{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.x-movie-floating{
+    position: absolute;
+    z-index: 10000;
+}
+
+.x-movie-bigimg{
+    height: 180px;
+    width: 120px;
+}
+.x-movie-mediumimg{
+    height: 140px;
+    width: 100px;
+    overflow-y: hidden;
+}
+
+.x-movie-desc{
+    padding-left: 10px;
+    max-width: 168px;
+    height: 115px;
+    overflow-y: hidden;
+}
+
+.x-movie-desc p{
+    margin-bottom: 5px;
+    line-height: 18px;
+}
+
+
+.x-item-name{
+    float: left;
+    font-weight: bold;
+    color: #666;
+}
+.x-movie-desc td{
+    line-height: 19px;
+    color: #555;
+    font-size: 12px;
+}
+.x-movie-buttons {
+    position: absolute;
+    bottom: 10px;
+}
+.x-rating-bar{
+    background-color: #2cc; 
+    float: left; 
+    height: 12px; 
+    margin: 3px; 
+    margin-left: 0; 
+    border-radius:3px; 
+    opacity: 0.6;
+}
+
+#weibo_login_btn a:hover, #qq_login_btn a:hover{
+    text-decoration: none;    
+}
+
+
+.portrait{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.x-m-title{
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+.x-m-poster{
+    overflow: hidden;
+}
+.x-m-label{
+    color: #999;
+    font-weight: bold;
+}
+.x-m-desc{
+    color: #444;
+}
+.x-m-desc table td{
+    line-height: 18px;
+    font-size: 13px;
+}
+.x-m-nbm{
+    margin-bottom:0;
+}
+.x-fl-hint{
+    margin-bottom: 10px;
+}
+
+.pagination ul li a{
+    background-color: transparent;
+}
+
+.x-movie-rank{
+    right: 0;
+    top:0;
+    padding: 0 5px 5px 5px;
+    position: absolute;
+    color: white;
+    height: 22px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgba(5,5,5,.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#B2000000,endcolorstr=#B2000000);
+    font-weight: bold;
+}
+.x-movie-won{
+    right: 0;
+    top:0;
+    padding: 0 5px 5px 5px;
+    position: absolute;
+    color: white;
+    height: 22px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgba(5,5,5,.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#B2000000,endcolorstr=#B2000000);
+}
+
+.x-big-btn{
+    padding: 50px;
+    font-size: 24px;
+    margin: 20px;
+}
+
+.x-msg-time {
+    font-size: 11px;
+}
+.x-msg-box tr:hover{
+    background-color: #eee;
+}
+.x-msg-box {
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+.x-msg-box td{
+    line-height: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.user-sidebar{
+}
+
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.x-hero-caption{
+    bottom: 4px;
+    left: 4px;
+    position: absolute;
+    color: white;
+    width: 120px;
+    height: 22px;
+    overflow: hidden;
+    background-color: rgba(5,5,5,.7);
+    text-align: center;
+    font-size: 13px;
+    zoom: 1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#B2000000,endcolorstr=#B2000000);
+}
+
+.alert-light{
+    background-color: #fff;
+    border-color: #fff;
+    color: #222;
+}
+
+.x-hero-list .inactive{
+    opacity: 0.2;
+    zoom: 1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#B2000000,endcolorstr=#B2000000);
+}
+
+.x-hero-list .active a{
+    border: 1px solid orange;
+}
+
+.x-m-share{
+    margin-top: 10px;
+}
+.x-m-meta{
+    font-size: 12px;
+    clear: both;
+}
+.x-m-area{
+    margin: 10px auto 10px auto;
+}
+.x-m-subtitle{
+    font-size: 16px;
+    font-weight:bold;
+}
+.x-m-summary{
+    font-size: 13px;
+}
+.z-movie-playlink{
+    display: block;
+    position: relative;
+}
+div.z-movie-playmask{
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    background: no-repeat scroll center;
+
+    background-image: url("http://img1.static.dianying.fm/static/images/btn.png");
+    background-color: rgba(0,0,0,0.3);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4B000000,endColorstr=#4B000000);
+    content:"";
+    z-index:2;
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+    visibility: hidden;
+    position: absolute;
+}
+a.z-movie-playmask:hover:after{
+    visibility: visible;
+}
+.x-li-nickname .popover{
+    background-color: white;
+}
+.x-li-nickname .popover.bottom .arrow:after{
+    border-bottom-color: #eee;
+}
+.x-li-nickname .popover a{
+    text-shadow: none;
+}
+a.muted{
+    color: #BBBBBB;
+    font-size: 90%;
+    font-weight: normal;
+}
+XL_CLOUD_VOD_BUTTON_btn_b{
+}
+XL_CLOUD_VOD_BUTTON_yunyulan_btn_small{
+
+}
+
+.z-like-button {
+    position: absolute;
+    bottom: 10px;
+    right:60px;
+
+}
+

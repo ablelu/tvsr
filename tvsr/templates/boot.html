@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{STATIC_URL}}default.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bdsstyle.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="{{STATIC_URL}}share.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body>
+    <script src="{{STATIC_URL}}jquery.js"></script>
+    <script src="{{STATIC_URL}}bootstrap/js/bootstrap.min.js"></script>
+
+
+
+    <div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="/">TVSR</a>
+				<div class="nav-collapse">
+					<ul class="nav x-top-nav">
+						<li><a href="/"><i class="icon-globe icon-black"></i> 首页</a></li>
+						<li><a href="/category/class_movie"><i class="icon-th-list icon-black"></i> 电影 </a></li>
+						<li><a href="/category/class_tv"><i class="icon-th-list icon-black"></i> 电视剧 </a></li>
+						<li><a href="/ranking/"><i class="icon-signal icon-black"></i> 排行 </a></li>
+					</ul>
+					<ul class="nav pull-right">
+						<li class="x-li-nickname">
+							<a href="/login">
+							<i class="icon-user icon-black"></i>
+							<font id="nav_nickname">
+								登录/注册
+							</font>
+							</a>
+						</li>
+					</ul>
+
+					<div class="pull-left">
+						<form class="navbar-search" method="get" action="/search" name="search_form">
+							<div class="input-append">
+								<input id="search_input" type="text" value="" name="key" placeholder="输入片名、导演、艺人" data-provide="typeahead" class="typeahead input-medium search-query" autocomplete="off" style="margin:0;border-radius:15px 0 0 15px;">
+								<button style="border-radius:0 15px 15px 0 ;" type="submit" class="btn btn-primary">
+									<i class="icon-search icon-white"></i>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <div id="main_content" class="container">
+    	<div class="row">
+    		<div class="x-m-side span3"> <!--Sidebar content-->
+    			<div class="x-m-poster">
+					<img alt="{{ movie.title }}" src="image/p1512775855.jpg" class="loading">
+				</div>
+				<div class="x-m-area">
+					<div class="btn-group">
+					<a href="#" id="add_plan" class="btn x-tooltip" data-toggle="tooltip" data-original-title="加入计划后可以获得资源更新的通知"><i class="icon-time"></i> <span>加入计划</span></a>
+					<a href="#" id="mark_seen" class="btn x-tooltip" data-toggle="tooltip" data-original-title="标记为已经看过的电影"><i class="icon-check"></i> <span>标记看过</span></a>
+					</div>
+				</div>
+				<div class="x-m-meta">
+				<div>
+					<span class="x-m-label">相关链接: </span>
+					<a rel="nofollow" href="{{ movie.douban_url }}" target="_blank">豆瓣链接</a>
+					<a rel="nofollow" href="{{ movie.imdb_url }}" target="_blank">IMDB链接</a>
+				</div>
+				</div>
+			</div>
+
+    		<div class="x-m-side span9">  <!-- info -->
+    			<div class="x-m-title"> 
+					{{ movie.title }}
+				</div>
+    			<table class="table table-condensed table-striped table-bordered">
+    				<tbody>
+    					<tr>
+    						<td class="span2"><span class="x-m-label">导演</span></td>
+    						<td>
+    							{% for director in movie.director %}
+								<a href="/category/key_%E5%A7%9C%E6%96%87">{{ director }}</a>  / 
+								{% endfor %}
+							</td>
+    					</tr>
+
+    					<tr>
+    						<td class="span2"><span class="x-m-label">主演</span></td>
+							<td>
+								{% for cast in movie.cast %}
+								<a href="">{{ cast }}</a>  / 
+								{% endfor %}
+							</td>
+						</tr>
+
+						<tr>
+							<td class="span2"><span class="x-m-label">类型</span></td>
+							<td>
+								{% for genre in movie.genre %}
+								<a href="">{{ genre }}</a>  / 
+								{% endfor %}
+							</td>
+						</tr>
+
+						<tr>
+							<td class="span2"><span class="x-m-label">别名</span></td>
+							<td>
+								{% for aka in movie.aka %}
+								{{ aka }} / 
+								{% endfor %}
+							</td>
+						</tr>
+
+						<tr>
+							<td class="span2"><span class="x-m-label">地区</span></td>
+							<td>
+							{% for country in movie.country %}
+							<a href="">{{ country }}</a>  / 
+							{% endfor %}
+							</td>
+						</tr>
+
+						<tr>
+							<td class="span2"><span class="x-m-label">上映时间</span></td>
+							<td>
+								{% for released_date in movie.released_date %}
+								{{ released_date }} / 
+								{% endfor %}
+							</td>
+						</tr>
+
+						<tr>
+							<td class="span2"><span class="x-m-label">片长</span></td>
+							<td>
+								{% for duration in movie.duration %}
+								{{ duration }} / 
+								{% endfor %}
+							</td>
+						</tr>
+
+						<tr class="x-m-rating">
+							<td class="span2"><span class="x-m-label">评分</span></td><td>
+							豆瓣：
+							<a rel="nofollow" href="{{ movie.douban_url }}" target="_blank" data-toggle="tooltip" class="x-tooltip" data-original-title="豆瓣上的信息">
+							<span class="badge" style="color: green; font-weight: bold;">8.8</span></a>
+							/ IMDB：
+							<a rel="nofollow" href="{{ movie.imdb_link }}" target="_blank" data-toggle="tooltip" class="x-tooltip" data-original-title="IMDB上的信息">
+							<span class="badge" style="color: orange; font-weight: bold;">6.9</span></a>
+							</td>
+						</tr>
+
+    				</tbody>	
+    			</table>	
+
+
+    			<div class style="clear:both;">
+					<p class="x-m-subtitle">剧情介绍</p>
+					<div class="x-m-summary">
+						<p>
+							{{ movie.intro }}
+						</p>
+					</div>
+					<br>
+				</div>
+
+    			<div class="">
+					<p class="x-m-subtitle">推荐资源</p>
+					<p>
+						<a href="" target="_blank" title="质量: 65" class="btn btn-info">
+						<i class="icon-white icon-play"></i> 全片播放 </a>
+					</p>
+				</div>
+
+
+				<div class="x-category-result" style="clear:both; margin-bottom: 10px; padding-top: 10px;">
+					<p class="x-m-subtitle">推荐影片：</p>
+					<div class="row-fluid">
+						<ul class="thumbnails">
+							<li class="x-movie-li" style="margin-left: 5px;">
+								<a class="z-movie-playlink" href="/movie/chinese-zodiac/" target="_blank" alt="剪刀手">
+									<div class="thumbnail">
+										<div class="x-movie-thumbnail">
+											<img alt="剪刀手" src="image/s1987571.jpg">
+										</div>
+										<div class="x-movie-cap">
+											<b>剪刀手</b>
+										</div>
+									</div>
+									<div class="z-movie-playmask" style="visibility: hidden;"></div>
+								</a>
+							</li>
+							<li class="x-movie-li" style="margin-left: 5px;">
+								<a class="z-movie-playlink" href="/movie/chinese-zodiac/" target="_blank" alt="霸王别姬">
+									<div class="thumbnail">
+										<div class="x-movie-thumbnail">
+											<img alt="霸王别姬" src="image/s1988198.jpg">
+										</div>
+										<div class="x-movie-cap">
+											<b>霸王别姬</b>
+										</div>
+									</div>
+									<div class="z-movie-playmask" style="visibility: hidden;"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+  				</div>
+			
+				<div class style="clear:both;">
+					<p class="x-m-subtitle">影片资源</p>
+					<div class="tabbable" style="font-size:13px;">
+						<ul class="nav nav-tabs">
+						  	<li class="active">
+							    <a href="#tab_leshi" data-toggle="tab">
+							    	<img style="width:16px;height:16px;" src="image/leshi.jpg" alt="乐视">乐视
+							    </a>
+						 	 </li>
+							<li class="">
+							    <a href="#tab_iqiyi" data-toggle="tab">
+							    	<img style="width:16px;height:16px;" src="image/iqiyi.jpg" alt="爱奇艺">爱奇艺
+							    </a>
+						  	</li>
+						  	<li class="">
+							    <a href="#tab_tudou" data-toggle="tab">
+							    	<img style="width:16px;height:16px;" src="image/tudou.jpg" alt="土豆">土豆
+							    </a>
+						  	</li>
+						</ul>
+
+						<div id="links_table" class="tab-content">
+							<div class="tab-pane active" id="tab_leshi">
+								<table class="table table-condensed table-striped table-hover">
+									<tbody>
+										<tr style>
+											<td>志明与春娇</td>
+											<td class="span3" style="width:15%;">
+												<a class="btn btn-info btn-small" target="_blank" rel="nofollow" href="leshi_url">
+													<i class="icon-white icon-play"></i> 立即播放
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="tab-pane" id="tab_iqiyi">
+								<table class="table table-condensed table-striped table-hover">
+									<tbody>
+										<tr>
+											<td>春娇与致命</td>
+											<td class="span3" style="width:15%;">
+												<a class="btn btn-info btn-small" target="_blank" rel="nofollow" href="iqiyi_url">
+													<i class="icon-white icon-play"></i> 立即播放
+												</a>
+											</td>
+										</tr>
+										<tr>
+											<td>春娇与致命2</td>
+											<td class="span3" style="width:15%;">
+												<a class="btn btn-info btn-small" target="_blank" rel="nofollow" href="iqiyi_url">
+													<i class="icon-white icon-play"></i> 立即播放
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+ 			</div> 			
+		</div>
+	</div>
+
+
+  </body>
+</html>

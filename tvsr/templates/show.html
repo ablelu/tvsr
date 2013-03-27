@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="{{STATIC_URL}}default.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bdsstyle.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}share.css" rel="stylesheet" type="text/css">
+  </head> 
+  <body>
+  
+  <div class="container">
+  <div class="row">
+
+
+
+
+<div class="x-m-side span3">
+<div class="x-m-poster">
+<img alt="{{ movie.title }}" src="image/p1512775855.jpg" class="loading">
+</div>
+<div class="x-m-area">
+<div class="btn-group ">
+
+<a href="#" id="add_plan" class="btn x-tooltip" data-toggle="tooltip" data-original-title="加入计划后可以获得资源更新的通知"><i class="icon-time"></i> <span>加入计划</span></a>
+
+
+<a href="#" id="mark_seen" class="btn x-tooltip" data-toggle="tooltip" data-original-title="标记为已经看过的电影"><i class="icon-check"></i> <span>标记看过</span></a>
+
+</div>
+</div>
+<div class="x-m-share">
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" data="{'text': '电影《让子弹飞》分享自@电影FM网 ', 'comment':'', 'pic': 'http://img1.static.dianying.fm/poster/l/5071cc6d90d7a90a416a596d', 'desc': '《让子弹飞》豆瓣官方小站：&lt;a href=&quot;http://www.douban.com/link2?url=http%3A//site.douban.com/106755/&quot;&gt;http://site.douban.c&lt;wbr/&gt;om/106755/&lt;/a&gt;&lt;br/&gt;　　民国年间，花钱捐得县长的马邦德（葛优 饰）携妻（刘嘉玲 饰）及随从走马上任。途经南国某地，遭劫匪张麻子（姜文 饰）一伙伏击，随从尽死，只夫妻二人侥幸活命。马为保命，谎称自己是县长的汤师爷。为汤师爷许下的财富所动，张麻子摇身一变化身县长，带着手下赶赴鹅城上任。有道是天高皇帝远，鹅城地处偏僻，一方霸主黄四郎（周润发 饰）只手遮天，全然不将这个新来的县长放在眼里。张麻子痛打了黄的武教头（姜武 饰），黄则设计害死张的义子小六（张默 饰）。原本只想赚钱的马邦德，怎么也想不到竟会被卷入这场土匪和恶霸的角力之中。鹅城上空愁云密布，血雨腥风在所难免……&lt;br/&gt;　　本片根据马识途的小说《夜谭十记》中的《盗官记》一章改编。'}">
+<a class="bds_tsina" title="分享到新浪微博" href="#"></a>
+<a class="bds_tqq" title="分享到腾讯微博" href="#"></a>
+<a class="bds_renren" title="分享到人人网" href="#"></a>
+<a class="bds_douban" title="分享到豆瓣网" href="#"></a>
+<a class="bds_qzone" title="分享到QQ空间" href="#"></a>
+<!--<span class="bds_more"></span>-->
+</div>
+<!-- Baidu Button END -->
+</div>
+
+
+<div class="x-m-meta">
+
+<div>
+<span class="x-m-label">相关链接: </span>
+<a rel="nofollow" href="{{ movie.douban_url }}" target="_blank">豆瓣链接</a>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="x-m-desc span9">
+
+<div class="x-m-title">
+{{ movie.title }}
+<span class="muted">(2010) </span>
+</div>
+
+
+<table class="table table-condensed table-striped table-bordered">
+
+
+<tbody>
+
+<tr><td class="span2"><span class="x-m-label">导演</span></td>
+<td>
+{% for director in movie.director %}
+<a href="/category/key_%E5%A7%9C%E6%96%87">{{ director }}</a>  / 
+{% endfor %}
+</td>
+</tr>
+
+<tr><td class="span2"><span class="x-m-label">主演</span></td>
+<td>
+{% for cast in movie.cast %}
+<a href="/category/key_%E5%A7%9C%E6%96%87">{{ cast }}</a>  / 
+{% endfor %}
+</td>
+</tr>
+
+<tr><td class="span2"><span class="x-m-label">类型</span></td>
+<td>
+{% for genre in movie.genre %}
+<a href="/category/genre_%E5%89%A7%E6%83%85">{{ genre }}</a>  / 
+{% endfor %}
+</td>
+</tr>
+
+<tr><td class="span2"><span class="x-m-label">地区</span></td>
+<td>
+{% for country in movie.country %}
+<a href="/category/region_%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86">{{ country }}</a>  / 
+{% endfor %}
+</td>
+</tr>
+
+<tr><td class="span2"><span class="x-m-label">上映时间</span></td>
+<td>
+{% for released_date in movie.released_date %}
+{{ released_date }} / 
+{% endfor %}
+</td>
+</tr>
+
+<tr><td class="span2"><span class="x-m-label">片长</span></td>
+<td>
+{% for duration in movie.duration %}
+{{ duration }} / 
+{% endfor %}
+</td>
+</tr>
+
+<tr><td class="span2"><span class="x-m-label">别名</span></td>
+<td>
+{% for aka in movie.aka %}
+{{ aka }} / 
+{% endfor %}
+</td>
+</tr>
+
+<tr class="x-m-rating"><td class="span2"><span class="x-m-label">评分</span></td><td>
+豆瓣：
+<a rel="nofollow" href="http://movie.douban.com/subject/3742360/" target="_blank" data-toggle="tooltip" class="x-tooltip" data-original-title="豆瓣上的信息"><span class="badge" style="color: green; font-weight: bold;">8.8</span></a>
+
+IMDB：
+<a rel="nofollow" href="http://www.imdb.com/title/tt1533117/" target="_blank" data-toggle="tooltip" class="x-tooltip" data-original-title="IMDB上的信息">
+<span class="badge" style="color: orange; font-weight: bold;">6.9</span></a>
+
+</td></tr>
+
+</tbody></table>
+
+
+<div class="">
+
+<p class="x-m-subtitle">最佳资源</p>
+<p>
+
+<a href="/playlink?url=http%3A%2F%2Fwww.letv.com%2Fptv%2Fpplay%2F26040%2F1.html&amp;id=50bd87a780d0641ba27d48e1" target="_blank" class="btn btn-primary" title="质量: 70">
+<i class="icon-white icon-play"></i> 立即播放 </a>
+
+</p>
+
+</div>
+
+
+
+<div class="x-category-result" style="clear:both;">
+<p class="x-m-subtitle">推荐影片：</p>
+<div class="row-fluid">
+
+
+<div class="span2" style="float: left; margin-bottom: 10px;">
+<a class="z-movie-playlink" href="/movie/tai-yang-zhao-chang-sheng-qi/" target="_blank" alt="太阳照常升起">
+   <div class="thumbnail">
+   <img alt="太阳照常升起" style="height:135px;" src="http://img2.static.dianying.fm/poster/m/5071c4cb90d7a90a4169b05d">
+   <div style="margin-top: 3px; text-align: center; line-height: 18px;">
+       <b>太阳照常升起</b>
+   </div>
+   </div>
+   <div class="z-movie-playmask" style="visibility: hidden;"></div>
+</a>
+</div>
+
+
+
+<div class style="clear:both;">
+<p class="x-m-subtitle">剧情介绍</p>
+<div class="x-m-summary">
+{{ movie.intro }}
+</p>
+</div>
+<br>
+</div>
+
+<div class style="clear:both;">
+<p class="x-m-subtitle">影片资源</p>
+<div class="tabbable" style="font-size:13px;">
+<ul class="nav nav-tabs">
+
+<li class="active" style=""><a href="#tab_0" data-toggle="tab">
+<img style="width:16px;height:16px;" src="image/leshi.jpg" alt="乐视">乐视</a></li>
+
+<li class="" style=""><a href="#tab_1" data-toggle="tab">
+<img style="width:16px;height:16px;" src="image/iqiyi.jpeg" alt="爱奇艺">爱奇艺</a></li>
+
+<li class="" style=""><a href="#tab_2" data-toggle="tab">
+<img style="width:16px;height:16px;" src="image/tudou.jpg" alt="土豆">土豆</a></li>
+
+</ul>
+
+<div id="links_table" class="tab-content">
+<div class="tab-pane active" id="tab_0">
+
+<table class="table table-condensed table-striped table-hover">
+<tbody><tr style="">
+<td>
+让子弹飞
+</td>
+<td class="span3" style="width:23%;">
+<a class="btn btn-primary btn-small" target="_blank" rel="nofollow" href="/playlink?url=http%3A%2F%2Fwww.letv.com%2Fptv%2Fpplay%2F26040%2F1.html&amp;id=50bd87a780d0641ba27d48e1">
+<i class="icon-white icon-play"></i>
+立即播放
+</a>
+<a href="javascript:void(0)" data-error-report="50bd87a780d0641ba27d48e1" class="x-tooltip" data-original-title="举报该链接"><i class="icon-exclamation-sign" data-error-report="50bd87a780d0641ba27d48e1"></i></a>
+</td>
+</tr>
+
+</tbody></table>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div style="clear:both"></div>
+
+
+</div>
+</div>
+
+
+
+
+
+</div> <!-- class="x-m-desc span9"  --!>
+
+
+
+
+
+
+
+
+  </div>
+  </div>
+
+
+
+
+
+  </body>
+</html>

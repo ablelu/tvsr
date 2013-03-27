@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="{{STATIC_URL}}tvsr.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}heades.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}home-default.css" rel="stylesheet" type="text/css">
+    <link href="{{STATIC_URL}}home.css" rel="stylesheet" type="text/css">
+  </head> 
+  <body>
+<div class="HitShow" id="j-hitshow">
+  <div class="title">
+    <h2 class="H201"><a href="http://so.letv.com/list/c2_t-1_a-1_y-1_f_at_o7_p.html" class="ta" target="_blank" title="热播">热播</a>
+      <div class="hotAdimg" id="JS_AD_M_I_TOPIC_LOGO_1"><a id="JS_AD_IMAGE_1363521485834255" href="http://pro.hoye.letv.com/main/adfclick?d=letvimedia&amp;i=z363,2819278,2569,4804&amp;rf=http%3A%2F%2Fwww.letv.com%2F&amp;a=dt64qnsBT27NXWZ12oaSd4qOz&amp;u=http://www.g1999.com/tc.html" target="_blank"><img src="http://i2.letvimg.com/gugwl/201209/20/jinpaichugui1.jpg"></a></div>
+    </h2>
+  </div>
+  
+
+
+  <div class="j-container">
+    <div class="list j-slider" data-itemhldr="dl" data-statectn="n_hitShow" style="left: 0px;"> 
+    {% for movie in Movies %} 
+    <dl class="w128">
+        <dt>
+            <a href="subject/{{ movie.subject_id }}/" target="_blank" title="{{ movie.title }}">
+            <img alt="{{ movie.title }}" src="image/{{ movie.img_name }}" class="loading">
+            <span class="bg"></span>
+            </a>
+        </dt>
+
+        <dd>
+            <p class="p1"> <a href="{{ movie.douban_url }}" target="_blank" title="{{ movie.title }}"> {{ movie.title }} </a></p>
+            <p class="p2"> {% for director in movie.director %} {{ director }} {% endfor %} </p>
+        </dd>
+    </dl>
+    {% endfor %}
+    </div>
+  </div>
+    
+    <div class="cycle"><a class="a1" href="javascript:void(0)"></a><a class="a2 on-2" href="javascript:void(0)"></a></div>
+</div>
+
+
+
+  </body>
+</html>
